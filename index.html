@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Result Portal</title>
+    <title>Checking Result...</title>
     <style>
         body {
             margin: 0;
             background: black;
+            color: white;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
         }
-        img {
+        #image {
+            display: none;
             max-width: 100%;
             max-height: 100%;
         }
@@ -19,7 +23,17 @@
 </head>
 <body>
 
-<img src="funny.jpg">
+<h2 id="loading">Loading result... Please wait ⏳</h2>
+
+<img id="image" src="funny.jpg">
+
+<script>
+setTimeout(function() {
+    document.getElementById("loading").style.display = "none";
+    document.getElementById("image").style.display = "block";
+}, 10000);
+</script>
 
 </body>
 </html>
+
